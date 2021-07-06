@@ -17,7 +17,7 @@ export default function Weather () {
 
     const getData = () => {
         navigator.geolocation.getCurrentPosition(async location => {
-            const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=metric&appid=e6829eeb8d1147ded782bf69bb28c46a`)
+            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=metric&appid=e6829eeb8d1147ded782bf69bb28c46a`)
             const info = await data.json()
             setClime(info)
         })
