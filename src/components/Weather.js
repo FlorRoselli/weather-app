@@ -11,9 +11,7 @@ export default function Weather () {
     const switchToC = () => setUnits('celsius')
     const switchToF = () => setUnits('fahrenheit')
 
-    React.useEffect(() => {
-        getData()
-    }, [])
+    
 
     const getData = () => {
         navigator.geolocation.getCurrentPosition(async location => {
@@ -26,7 +24,9 @@ export default function Weather () {
             return <span>Loading...</span>;
         }
     
-    
+    React.useEffect(() => {
+        getData()
+    }, [])
     
     const iconURL = `https://openweathermap.org/img/wn/${clime.weather[0].icon}@2x.png`
 
